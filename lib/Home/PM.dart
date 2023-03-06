@@ -52,10 +52,10 @@ class _PMState extends State<PM> {
                           )),
 
                       Positioned(
-                          right: 40,
-                          top: 40,
-                          width: 80,
-                          height: 150,
+                          right: 15,
+                          top: 15,
+                          width: 120,
+                          height: 120,
                           child: Container(
                             decoration: BoxDecoration(
                                 image: DecorationImage(

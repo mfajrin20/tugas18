@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
-import 'package:tugas1/DataPemain/inputDataPemain.dart';
+import 'package:tugas1/DataPelatih/inputDataPelatih.dart';
 
-class dataPemain extends StatelessWidget {
-  const dataPemain ({Key? key}) : super(key: key);
+
+class dataPelatih extends StatelessWidget {
+
+  const dataPelatih ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: const Text("Data Pemain",textAlign: TextAlign.justify,),
+          title: const Text("Data Pelatih",textAlign: TextAlign.justify,),
         ),
         backgroundColor: Colors.lightBlueAccent,
         body: SingleChildScrollView(
@@ -36,16 +38,29 @@ class dataPemain extends StatelessWidget {
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                   fit:BoxFit.fill,
-                                    image: AssetImage('assets/images/team.png'),
+                                  image: AssetImage('assets/images/team.png'),
                                 )
                             ),
                           )),
+
+                      // Positioned(
+                      //     right: 40,
+                      //     top: 40,
+                      //     width: 150,
+                      //     height: 150,
+                      //     child: Container(
+                      //       decoration: BoxDecoration(
+                      //           image: DecorationImage(
+                      //               image: AssetImage('assets/images/football1.png')
+                      //           )
+                      //       ),
+                      //     )),
 
                       Positioned(
                         child: FadeAnimation(1.6, Container(
                           margin: EdgeInsets.only(top: 40),
                           child: Center(
-                            child: Text("DATA PEMAIN",
+                            child: Text("DATA PELATIH",
                               // textAlign: TextAlign.justify,
                               style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),),
                           ),
@@ -58,7 +73,7 @@ class dataPemain extends StatelessWidget {
             ),
           ),
         ),
-          floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.add,
             size: 30,
@@ -67,9 +82,10 @@ class dataPemain extends StatelessWidget {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(50))),
           onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const inputDataPemain()));},
+          Navigator.push(context,MaterialPageRoute(builder: (context) => const inputDataPelatih()));},
           backgroundColor: Colors.white,
         ),
+
     );
   }
 }

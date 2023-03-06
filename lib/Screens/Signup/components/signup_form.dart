@@ -35,7 +35,7 @@ class SignUpForm extends StatelessWidget {
               hintText: "Email",
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(defaultPadding),
-                child: Icon(Icons.account_box_outlined),
+                child: Icon(Icons.email),
               ),
             ),
           ),
@@ -64,7 +64,7 @@ class SignUpForm extends StatelessWidget {
                 hintText: "Confirm password",
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(defaultPadding),
-                  child: Icon(Icons.lock),
+                  child: Icon(Icons.lock_clock_outlined),
                 ),
               ),
             ),
@@ -89,6 +89,38 @@ class SignUpForm extends StatelessWidget {
             },
           ),
         ],
+        // TextFormField(
+        //   //memberikan identitas untuk setiap form
+        //   decoration: InputDecoration(
+        //     hintText: "Ketik nama lengkap",
+        //     labelText: "Nama Lengkap",
+        //     icon: Icon(Icons.people),
+        //   ),
+        //   //memberikan validasi jika form kosong
+        //   validator: (value) {
+        //     if (value!.isEmpty) {
+        //       return 'Nama tidak boleh kosong';
+        //     }
+        //     return null;
+        //   },
+        // ),
+        // //memberikan jarak
+        // SizedBox(height: 15),
+        //
+        //
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(vertical: 16.0),
+        //   child: ElevatedButton(
+        //     onPressed: () {
+        //       if (_formKey.currentState!.validate()) {
+        //         ScaffoldMessenger.of(context).showSnackBar(
+        //           const SnackBar(content: Text('Processing Data')),
+        //         );
+        //       }
+        //     },
+        //     child: const Text('Submit'),
+        //   ),
+        // ),
       ),
     );
   }

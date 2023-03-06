@@ -1,8 +1,8 @@
 // @dart=2.9
-import 'dart:html';
+// import 'dart:html';
 import 'package:tugas1/Home/home.dart';
-import 'package:tugas1/Screens/Welcome/welcome_screen.dart';
-import 'package:tugas1/onboard/onboard.dart';
+// import 'package:tugas1/Screens/Welcome/welcome_screen.dart';
+// import 'package:tugas1/onboard/onboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -43,5 +43,6 @@ class _MyAppState extends State<MyApp> {
 
   }
 }
+
 
 
