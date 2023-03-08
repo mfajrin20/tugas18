@@ -1,8 +1,8 @@
-import 'package:tugas1/Screens/Welcome/welcome_screen.dart';
+import 'package:tugas1/Auth/Screens/Welcome/welcome_screen.dart';
 import 'package:tugas1/onboard/onboard_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../constant.dart';
+import 'package:tugas1/onboard/constant.dart';
 
 class OnBoard extends StatefulWidget {
   @override

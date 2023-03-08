@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:tugas1/constant.dart';
+import 'package:tugas1/onboard/constant.dart';
 
 class SignUpScreenTopImage extends StatelessWidget {
   const SignUpScreenTopImage({

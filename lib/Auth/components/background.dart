@@ -23,6 +23,7 @@ class Background extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
+            // top
             Positioned(
               top: 0,
               left: 0,
@@ -31,65 +32,11 @@ class Background extends StatelessWidget {
                 width: 120,
               ),
             ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset(
-                topImage,
-                width: 140,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset(
-                topImage,
-                width: 160,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset(
-                topImage,
-                width: 180,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset(
-                topImage,
-                width: 200,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset(
-                topImage,
-                width: 220,
-              ),
-            ),
+            // bottom
             Positioned(
               bottom: 0,
               right: 0,
               child: Image.asset(bottomImage, width: 120),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(bottomImage, width: 140),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(bottomImage, width: 160),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(bottomImage, width: 180),
             ),
             SafeArea(child: child),
           ],

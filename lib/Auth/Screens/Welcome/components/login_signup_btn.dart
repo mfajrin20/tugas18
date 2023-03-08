@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:tugas1/constant.dart';
+import 'package:tugas1/onboard/constant.dart';
 import '../../Login/login_screen.dart';
 import '../../Signup/signup_screen.dart';
 

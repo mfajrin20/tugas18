@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugas1/constant.dart';
+import 'package:tugas1/onboard/constant.dart';
 import 'package:tugas1/responsive.dart';
 import '../../components/background.dart';
 import 'components/sign_up_top_image.dart';

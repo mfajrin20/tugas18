@@ -34,7 +34,6 @@ class _MyAppState extends State<MyApp> {
       ),
 
         home:
-         //HomePage(),
          OnBoard(),
         // HomeScreen(),
         // WelcomeScreen(),
