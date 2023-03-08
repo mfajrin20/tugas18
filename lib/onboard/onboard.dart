@@ -15,7 +15,7 @@ class _OnBoardState extends State<OnBoard> {
   late PageController _pageController;
   List<OnboardModel> screens = <OnboardModel>[
     OnboardModel(
-      img: 'assets/images/onboard1-removebg-preview.png',
+      img: 'assets/images/onboard1.png',
       text: "Penentuan Penempatan Posisi Pemain Inti Futsall",
       desc:
           "Sebuah Aplikasi yang akan membantu dalam proses penentuan penempatan pemain inti futsall",
