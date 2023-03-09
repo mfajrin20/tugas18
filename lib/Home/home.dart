@@ -20,7 +20,7 @@ import 'package:tugas1/ProfileMatching/Posisi/Kiper.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Anchor.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Flank.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Pivot.dart';
-import 'package:tugas1/Screens/Login/login_screen.dart';
+import 'package:tugas1/Auth/Screens/Login/login_screen.dart';
 import 'package:tugas1/dashboard/HomeScreen.dart';
 
 enum DialogsAction { yes, cancel }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tugas1/onboard/constant.dart';
 import '../../Login/login_screen.dart';
 import '../../Signup/signup_screen.dart';
 
@@ -12,9 +11,17 @@ class LoginAndSignupBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Hero(
-          tag: "login_btn",
-          child: ElevatedButton(
+        //login
+        Container(
+          width: 200,
+          height: 45,
+          child: TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: Color(0xffF18265),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
             onPressed: () {
               Navigator.push(
                 context,
@@ -26,27 +33,44 @@ class LoginAndSignupBtn extends StatelessWidget {
               );
             },
             child: Text(
-              "Login".toUpperCase(),
+              "LOGIN",
+              style: TextStyle(
+                color: Color(0xFF262525),
+              ),
             ),
           ),
         ),
+
+        //
         const SizedBox(height: 16),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return SignUpScreen();
-                },
+
+        //sign up
+        Container(
+          width: 200,
+          height: 45,
+          child: TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: Color(0xffF18265),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-              primary: kPrimaryLightColor, elevation: 0),
-          child: Text(
-            "Sign Up".toUpperCase(),
-            style: TextStyle(color: Colors.black),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SignUpScreen();
+                  },
+                ),
+              );
+            },
+            child: Text(
+              "SIGN UP",
+              style: TextStyle(
+                color: Color(0xFF262525),
+              ),
+            ),
           ),
         ),
       ],

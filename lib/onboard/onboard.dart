@@ -2,7 +2,7 @@ import 'package:tugas1/Auth/Screens/Welcome/welcome_screen.dart';
 import 'package:tugas1/onboard/onboard_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tugas1/onboard/constant.dart';
+import 'package:tugas1/constant.dart';
 
 class OnBoard extends StatefulWidget {
   @override
@@ -15,27 +15,27 @@ class _OnBoardState extends State<OnBoard> {
   late PageController _pageController;
   List<OnboardModel> screens = <OnboardModel>[
     OnboardModel(
-      img: 'assets/images/onboard1.png',
+      img: 'assets/images/on1.png',
       text: "Penentuan Penempatan Posisi Pemain Inti Futsall",
       desc:
           "Sebuah Aplikasi yang akan membantu dalam proses penentuan penempatan pemain inti futsall",
-      bg: Color(0xFF4756DF),
+      bg: Color(0xff4A64FE),
       button: Colors.white,
     ),
     OnboardModel(
-      img: 'assets/images/on1.png',
+      img: 'assets/images/on2.png',
       text: "Dapatkan Kemudahan Akses Pelatih Kapanpun dan Dimanapun",
       desc:
           "Pelatih dapat memberikan penilaian secara langsung pada saat berada dilapangan",
       bg: Colors.white,
-      button: Color(0xFF4756DF),
+      button: Color(0xff4A64FE),
     ),
     OnboardModel(
-      img: 'assets/images/on2.png',
+      img: 'assets/images/on3.png',
       text: "Kolaborasi Metode Profile Matching dan Borda",
       desc:
           "Mampu memberikan solusi dan kemudahan dalam proses penentuan penempatan posisi pemain",
-      bg: Color(0xFF4756DF),
+      bg: Color(0xff4A64FE),
       button: Colors.white,
     ),
   ];

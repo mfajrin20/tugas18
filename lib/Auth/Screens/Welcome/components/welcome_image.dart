@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tugas1/onboard/constant.dart';
+import 'package:tugas1/constant.dart';
 
 class WelcomeImage extends StatelessWidget {
   const WelcomeImage({
@@ -12,7 +12,12 @@ class WelcomeImage extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "SELAMAT DATANG PELATIH PORPROV",
+          "SELAMAT DATANG",
+          style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          "PELATIH PORPROV",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         SizedBox(height: defaultPadding * 2),
