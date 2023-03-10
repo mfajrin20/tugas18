@@ -8,6 +8,21 @@ class Anchor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
+    //
+    final List<Map<String, dynamic>> _Posisi = [
+      {
+        'value': '3',
+        'label': 'Andi',
+      },
+      {
+        'value': '2',
+        'label': 'Dila',
+      },
+      {
+        'value': '1',
+        'label': 'Fajrin',
+      },
+    ];
 
     //Teknik Dasar
     final List<Map<String, dynamic>> _Passing = [
@@ -234,6 +249,23 @@ class Anchor extends StatelessWidget {
                 ),
               ),
 
+              //TeamWork
+              SelectFormField(
+                type: SelectFormFieldType.dropdown, // or can be dialog
+                initialValue: 'Pemain',
+                icon: Icon(Icons.border_color_outlined),
+                labelText: 'Pemain',
+                items: _Posisi,
+                onChanged: (val) => print(val),
+                onSaved: (val) => print(val),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Pemain tidak boleh kosong';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 15),
 
               // form isi
               TextFormField(

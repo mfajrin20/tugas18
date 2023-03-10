@@ -43,19 +43,6 @@ class dataPelatih extends StatelessWidget {
                             ),
                           )),
 
-                      // Positioned(
-                      //     right: 40,
-                      //     top: 40,
-                      //     width: 150,
-                      //     height: 150,
-                      //     child: Container(
-                      //       decoration: BoxDecoration(
-                      //           image: DecorationImage(
-                      //               image: AssetImage('assets/images/football1.png')
-                      //           )
-                      //       ),
-                      //     )),
-
                       Positioned(
                         child: FadeAnimation(1.6, Container(
                           margin: EdgeInsets.only(top: 40),
@@ -82,7 +69,8 @@ class dataPelatih extends StatelessWidget {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(50))),
           onPressed: () {
-          Navigator.push(context,MaterialPageRoute(builder: (context) => const inputDataPelatih()));},
+          Navigator.push(context,MaterialPageRoute(builder: (context) => const inputDataPelatih()));
+          },
           backgroundColor: Colors.white,
         ),
 

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tugas1/Animation/FadeAnimation.dart';
 import 'package:select_form_field/select_form_field.dart';
+import 'package:tugas1/Animation/FadeAnimation.dart';
+import '../Auth/components/backgroundInputDataPemain.dart';
 
 class inputDataPemain extends StatelessWidget {
-  const inputDataPemain ({Key? key}) : super(key: key);
+  const inputDataPemain({Key? key}) : super(key: key);
 
-  @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
+    Size size = MediaQuery.of(context).size;
     final List<Map<String, dynamic>> _Posisi = [
       {
         'value': '1',
@@ -26,172 +27,126 @@ class inputDataPemain extends StatelessWidget {
         'label': 'Pivot',
       },
     ];
-
     return Scaffold(
-
-      backgroundColor: Colors.lightBlueAccent,
-      appBar: AppBar(
-        backgroundColor: Colors.blue[400],
-        title: const Text("Input Data Pemain",textAlign: TextAlign.justify,),
-      ),
-
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
+      body: backgroundInputDataPemain(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            FadeAnimation(1.5,
               Container(
-                height: 150,
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: FadeAnimation(1.6, Container(
-                        // margin: EdgeInsets.only(top: 20),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit:BoxFit.fill,
-                                image: AssetImage('assets/images/wave3.png'),
-                              )
-                          ),
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  "PEMAIN",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF2661FA),
+                      fontSize: 30
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+
+            Padding(
+              padding: EdgeInsets.all(30.0),
+              child: Column(
+                children: <Widget>[
+                  FadeAnimation(1.8,
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        //Isi data pelatih
+                        child: Column(
+                          children: <Widget>[
+                            TextFormField(
+                              //memberikan identitas untuk setiap form
+                              decoration: InputDecoration(
+                                hintText: "Ketik Nama Lengkap",
+                                labelText: "Nama Lengkap",
+                                icon: Icon(Icons.person),
+                              ),
+                              //memberikan validasi jika form kosong
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Nama tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                            TextFormField(
+                              //memberikan identitas untuk setiap form
+                              decoration: InputDecoration(
+                                hintText: "Ketik Alamat",
+                                labelText: "Alamat ",
+                                icon: Icon(Icons.maps_home_work_outlined),
+                              ),
+                              //memberikan validasi jika form kosong
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Alamat tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                            TextFormField(
+                              //memberikan identitas untuk setiap form
+                              decoration: InputDecoration(
+                                hintText: "Ketik Gmail",
+                                labelText: "Gmail",
+                                icon: Icon(Icons.email),
+                              ),
+                              //memberikan validasi jika form kosong
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Gmail tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                            TextFormField(
+                              //memberikan identitas untuk setiap form
+                              decoration: InputDecoration(
+                                hintText: "Ketik Telepon",
+                                labelText: "Telepon",
+                                icon: Icon(Icons.phone),
+                              ),
+                              //memberikan validasi jika form kosong
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Gmail tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                            SelectFormField(
+                              type: SelectFormFieldType.dropdown, // or can be dialog
+                              initialValue: 'circle',
+                              icon: Icon(Icons.border_color_outlined),
+                              labelText: 'Posisi',
+                              items: _Posisi,
+                              onChanged: (val) => print(val),
+                              onSaved: (val) => print(val),
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Posisi tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                          ],
                         ),
                       )),
-                    ),
-
-                    Positioned(
-                        right: 10,
-                        width: 80,
-                        height: 80,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/images/futsal1.png')
-                              )
-                          ),
-                        )),
-
-                    Positioned(
-                      child: FadeAnimation(1.6, Container(
-                        margin: EdgeInsets.only(top: 70),
-                        child: Center(
-                          child: Text("INPUT DATA PEMAIN", style: TextStyle(color: Colors.black54, fontSize: 20, fontWeight: FontWeight.bold),),
-                        ),
-                      )),
-                    )
-                  ],
-                ),
+                  SizedBox(height: 50),
+                ],
               ),
+            ),
 
-              // form isi
-              TextFormField(
-                //memberikan identitas untuk setiap form
-                decoration: InputDecoration(
-                  hintText: "Ketik Nama Lengkap",
-                  labelText: "Nama Lengkap",
-                  icon: Icon(Icons.person),
-                ),
-                //memberikan validasi jika form kosong
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Nama tidak boleh kosong';
-                  }
-                  return null;
-                },
-              ),
-              //memberikan jarak
-              SizedBox(height: 15),
-
-              TextFormField(
-                //memberikan identitas untuk setiap form
-                decoration: InputDecoration(
-                  hintText: "Ketik Asal Sekolah",
-                  labelText: "Asal Sekolah",
-                  icon: Icon(Icons.person),
-                ),
-                //memberikan validasi jika form kosong
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Asal Sekolah tidak boleh kosong';
-                  }
-                  return null;
-                },
-              ),
-              //memberikan jarak
-              SizedBox(height: 15),
-
-              TextFormField(
-                //memberikan identitas untuk setiap form
-                decoration: InputDecoration(
-                  hintText: "Ketik Alamat",
-                  labelText: "Alamat ",
-                  icon: Icon(Icons.maps_home_work_outlined),
-                ),
-                //memberikan validasi jika form kosong
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Alamat tidak boleh kosong';
-                  }
-                  return null;
-                },
-              ),
-              //memberikan jarak
-              SizedBox(height: 15),
-
-              TextFormField(
-                //memberikan identitas untuk setiap form
-                decoration: InputDecoration(
-                  hintText: "Ketik Gmail",
-                  labelText: "Gmail",
-                  icon: Icon(Icons.email),
-                ),
-                //memberikan validasi jika form kosong
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Gmail tidak boleh kosong';
-                  }
-                  return null;
-                },
-              ),
-              //memberikan jarak
-              SizedBox(height: 15),
-
-              TextFormField(
-                //memberikan identitas untuk setiap form
-                decoration: InputDecoration(
-                  hintText: "Ketik Telepon",
-                  labelText: "Telepon",
-                  icon: Icon(Icons.phone),
-                ),
-                //memberikan validasi jika form kosong
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Gmail tidak boleh kosong';
-                  }
-                  return null;
-                },
-              ),
-              //memberikan jarak
-              SizedBox(height: 15),
-
-              SelectFormField(
-                type: SelectFormFieldType.dropdown, // or can be dialog
-                initialValue: 'circle',
-                icon: Icon(Icons.border_color_outlined),
-                labelText: 'Posisi',
-                items: _Posisi,
-                onChanged: (val) => print(val),
-                onSaved: (val) => print(val),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Posisi tidak boleh kosong';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 15),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: ElevatedButton(
+            FadeAnimation(2.1,
+              Container(
+                alignment: Alignment.centerRight,
+                margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                child: MaterialButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -199,42 +154,38 @@ class inputDataPemain extends StatelessWidget {
                       );
                     }
                   },
-                  child: const Text('Submit'),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                  textColor: Colors.white,
+                  padding: const EdgeInsets.all(0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 50.0,
+                    width: size.width * 0.5,
+                    decoration: new BoxDecoration(
+                        borderRadius: BorderRadius.circular(80.0),
+                        gradient: new LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 89, 84, 229),
+                              Color.fromARGB(255, 180, 115, 203)
+                            ]
+                        )
+                    ),
+                    padding: const EdgeInsets.all(0),
+                    child: Text(
+                      "SUBMINT",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              //memberikan jarak
-              SizedBox(height: 70),
-
-              Container(
-                height: 150,
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: FadeAnimation(1.6, Container(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit:BoxFit.fill,
-                                image: AssetImage('assets/images/wave4.png'),
-                              )
-                          ),
-                        ),
-                      )),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+      resizeToAvoidBottomInset: false,
     );
   }
 }
-
-
-
-
-
-
-
