@@ -1,4 +1,3 @@
-import 'package:tugas1/Auth/Screens/Login/Login.dart';
 import 'package:tugas1/Auth/Screens/welcome/welcome.dart';
 import 'package:tugas1/onboard/onboard_model.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +64,8 @@ class _OnBoardState extends State<OnBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Scaffold adahal widget utamaa dalam pembuatan sebuah halaman
+      //Scaffold Adalah kelas dalam flutter yang menyediakan banyak widget
       backgroundColor: currentIndex % 2 == 0 ? kwhite : kblue,
       appBar: AppBar(
         backgroundColor: currentIndex % 2 == 0 ? kwhite : kblue,
@@ -155,7 +156,6 @@ class _OnBoardState extends State<OnBoard> {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) => WelcomeScreen()));
                       }
-
                       _pageController.nextPage(
                         duration: Duration(milliseconds: 300),
                         curve: Curves.bounceIn,

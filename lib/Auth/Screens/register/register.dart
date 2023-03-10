@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Auth/Screens/login/login.dart';
 import 'package:tugas1/Auth/components/background.dart';
+import 'package:tugas1/Home/home.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -82,7 +83,9 @@ class RegisterScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                },
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
                 textColor: Colors.white,
                 padding: const EdgeInsets.all(0),
@@ -94,8 +97,8 @@ class RegisterScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(80.0),
                     gradient: new LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 255, 136, 34),
-                        Color.fromARGB(255, 255, 177, 41)
+                        Color.fromARGB(255, 174, 34, 255),
+                        Color.fromARGB(255, 144, 150, 239)
                       ]
                     )
                   ),
