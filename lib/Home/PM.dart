@@ -63,15 +63,14 @@ class _PMState extends State<PM> {
                                 )
                             ),
                           )),
-
                       Positioned(
                         child: FadeAnimation(1.6, Container(
                           margin: EdgeInsets.only(top: 50),
                           child: Center(
-                            child: Text("PROFILE MATCHING", style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),),
+                            child: Text("PROFILE MATCHING", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
                           ),
                         )),
-                      )
+                      ),
                     ],
                   ),
                 ),

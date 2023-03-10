@@ -20,7 +20,6 @@ import 'package:tugas1/ProfileMatching/Posisi/Kiper.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Anchor.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Flank.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Pivot.dart';
-import 'package:tugas1/Auth/Screens/Login/login_screen.dart';
 import 'package:tugas1/dashboard/HomeScreen.dart';
 
 enum DialogsAction { yes, cancel }
@@ -244,7 +243,7 @@ class _HomePageState extends State<HomePage>{
                             MaterialButton(
                                 onPressed: ()
                                 {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+                                 // Navigator.push(context, MaterialPageRoute(builder: (context) => const ()));
                                 },
                                 child: Text('Log Out',style: TextStyle(
                                     color: Color(0xFFC41A3B)),

@@ -1,8 +1,10 @@
-import 'package:tugas1/Auth/Screens/Welcome/welcome_screen.dart';
+import 'package:tugas1/Auth/Screens/Login/Login.dart';
+import 'package:tugas1/Auth/Screens/welcome/welcome.dart';
 import 'package:tugas1/onboard/onboard_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tugas1/constant.dart';
+
 
 class OnBoard extends StatefulWidget {
   @override
@@ -28,14 +30,14 @@ class _OnBoardState extends State<OnBoard> {
       desc:
           "Pelatih dapat memberikan penilaian secara langsung pada saat berada dilapangan",
       bg: Colors.white,
-      button: Color(0xff4A64FE),
+      button: Color(0xff0066FF),
     ),
     OnboardModel(
       img: 'assets/images/on3.png',
       text: "Kolaborasi Metode Profile Matching dan Borda",
       desc:
           "Mampu memberikan solusi dan kemudahan dalam proses penentuan penempatan posisi pemain",
-      bg: Color(0xff4A64FE),
+      bg: Color(0xff0066FF),
       button: Colors.white,
     ),
   ];
