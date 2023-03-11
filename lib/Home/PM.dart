@@ -1,101 +1,130 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
 
-class PM extends StatefulWidget {
-  @override
-  _PMState createState() => _PMState();
 
-}
-class _PMState extends State<PM> {
-
+class PM extends StatelessWidget {
+  const PM ({Key? key}) : super(key: key);
   @override
+
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 400,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/layered1.png'),
-                          fit: BoxFit.fill
-                      )
+    return Material(
+      child: Container(
+        width: MediaQuery.of(context).size.width/1,
+        height: MediaQuery.of(context).size.height/1,
+        child: Stack(
+          children: [
+            Stack(children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/3.8,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/2.2,
+                decoration: BoxDecoration(
+                  gradient: new LinearGradient(
+                      colors: [
+                        Color.fromARGB(255, 89, 84, 229),
+                        Color.fromARGB(255, 180, 115, 203)
+                      ]
                   ),
+                  // borderRadius: BorderRadius.only(
+                  //   bottomRight: Radius.circular(70),
+                  //   bottomLeft: Radius.circular(70),
+                  // ),
+                  //borderRadius: BorderRadius.only(bottomRight: Radius.circular(50)),
+                ),
 
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                          left: 30,
-                          width: 80,
-                          height: 200,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/light-1.png')
-                                )
-                            ),
-                          )),
-
-                      Positioned(
-                          left: 140,
-                          width: 80,
-                          height: 150,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/light-2.png')
-                                )
-                            ),
-                          )),
-
-                      Positioned(
-                          right: 15,
-                          top: 15,
-                          width: 120,
-                          height: 120,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/bola1.png')
-                                )
-                            ),
-                          )),
-                      Positioned(
-                        child: FadeAnimation(1.6, Container(
-                          margin: EdgeInsets.only(top: 50),
-                          child: Center(
-                            child: Text("PROFILE MATCHING", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
-                          ),
-                        )),
-                      ),
-                    ],
+                child: Center(
+                  child: Image.asset(
+                    "assets/images/PM.png",
+                    scale: 0.8,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: 10,),
-                      FadeAnimation(2.5, Text('Profile matching adalah proses '
-                          'mencocokkan profil individu atau kelompok dengan suatu '
-                          'posisi atau kebutuhan. Proses Profile Matching yaitu proses '
-                          'membandingkan antara nilai individu dengan nilai standar sehingga '
-                          'dapat diketahui perbedaan nilainya (gap), semakin kecil nilai gap yang '
-                          'dihasilkan maka memiliki peluang lebih besar untuk menempati suatu posisi.',
-                        textAlign: TextAlign.justify, style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 255, 255, 1)),)),
-                    ],
-                  ),
-                )
-              ],
+              ),
+            ],
             ),
-          ),
-        )
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/3,
+                decoration: BoxDecoration(
+                  gradient: new LinearGradient(
+                      colors: [
+                        Color.fromARGB(255, 89, 84, 229),
+                        Color.fromARGB(255, 180, 115, 203)
+                      ]
+                  ),
+                ),
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/3.0,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(90),
+                    topRight: Radius.circular(90),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 30),
+                    Positioned(
+                      child: FadeAnimation(1.8, Container(
+                        child: Center(
+                          child: Text("PROFILE MATCHING",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1,
+                              wordSpacing: 2,
+                            ) ,
+                          ),
+                        ),
+                      )),
+                    ),
+                    SizedBox(height: 20,),
+                    Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(height: 10,),
+                          FadeAnimation(2.5, Text('Profile matching adalah proses '
+                              'mencocokkan profil individu atau kelompok dengan suatu '
+                              'posisi atau kebutuhan. Proses Profile Matching yaitu proses '
+                              'membandingkan antara nilai individu dengan nilai standar sehingga '
+                              'dapat diketahui perbedaan nilainya (gap), semakin kecil nilai gap yang '
+                              'dihasilkan maka memiliki peluang lebih besar untuk menempati suatu posisi.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2,
+                                  // color: Colors.black,
+                                ),
+                              )
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
-
-
 

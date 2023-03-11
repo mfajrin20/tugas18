@@ -10,6 +10,7 @@ import 'package:tugas1/DataPemain/dataPemain.dart';
 import 'package:tugas1/Hasil/HasilPerhitunganPMdanBORDA.dart';
 import 'package:tugas1/Home/PM.dart';
 import 'package:tugas1/Home/Borda.dart';
+import 'package:tugas1/Home/PemainInti.dart';
 import 'package:tugas1/Home/header_drawer.dart';
 import 'package:tugas1/Kriteria/kriteriaScreen.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilAnchor.dart';
@@ -20,7 +21,9 @@ import 'package:tugas1/ProfileMatching/Posisi/Kiper.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Anchor.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Flank.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Pivot.dart';
-import 'package:tugas1/dashboard/HomeScreen.dart';
+import '../Auth/Akun/Account.dart';
+
+
 
 enum DialogsAction { yes, cancel }
 
@@ -31,12 +34,13 @@ class HomePage extends StatefulWidget {
 }
   int currentIndex =0;
   final List<Widget> body =[
-    HomeScreen(),
+    PemainInti(),
     PM(),
     Borda(),
-
+    ProfilePage(),
 
   ];
+
 class _HomePageState extends State<HomePage>{
   get headline6 => null;
 
@@ -45,10 +49,22 @@ class _HomePageState extends State<HomePage>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
+       elevation: 0.0,
         backgroundColor: Colors.blue,
-        title: const Text("Futsall"),
       ),
       drawer: Drawer(
+       child: Container(
+        decoration:BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                stops: [0.0, 1.0],
+                colors: [
+                  Theme.of(context).primaryColor.withOpacity(0.2),
+                  Theme.of(context).primaryColor.withOpacity(0.5),
+                ]
+            )
+        ) ,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -59,11 +75,12 @@ class _HomePageState extends State<HomePage>{
                   style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
                 ),
               ),
+
               ListTile(
                 leading: const Icon(Icons.home),
                 title: const Text("Home"),
                 onTap: () {
-                  Navigator.pop(context,MaterialPageRoute(builder: (context) => const HomeScreen()));},
+                  Navigator.pop(context,MaterialPageRoute(builder: (context) => const PemainInti()));},
               ),
               ListTile(
                 leading: const Icon(Icons.photo_album_outlined),
@@ -262,16 +279,18 @@ class _HomePageState extends State<HomePage>{
                         );
                       });
                 },
-              )
+              ),
+
             ],
           ),
+        ),
         ),
       ),
 
       //Navbar
       body: body[currentIndex],
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.lightBlueAccent,
+        bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.white,
         color : Colors.blue,
         animationDuration: Duration(milliseconds: 300),
         onTap: ontap,
@@ -281,6 +300,8 @@ class _HomePageState extends State<HomePage>{
           Icon(Icons.account_tree,
             color: Colors.white,),
           Icon(Icons.add_circle,
+            color: Colors.white,),
+          Icon(Icons.person,
             color: Colors.white,),
         ],
       )
