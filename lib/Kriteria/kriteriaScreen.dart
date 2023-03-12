@@ -1,122 +1,159 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
-import 'package:flutter/rendering.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:tugas1/Kriteria/KriteriaAnchor.dart';
+import 'package:tugas1/Kriteria/KriteriaKiper.dart';
 
-class kriteriaScreen extends StatelessWidget {
-  const kriteriaScreen ({Key? key}) : super(key: key);
 
-
+class KriteriaScreen extends StatelessWidget {
+  const KriteriaScreen ({Key? key}) : super(key: key);
   @override
+
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text("Kriteria Pemain",textAlign: TextAlign.justify,),
+      appBar: AppBar(
+        elevation: 0.0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 89, 84, 229),
+                  Color.fromARGB(255, 180, 115, 203)
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp
+            ),
+          ),
         ),
-        backgroundColor: Colors.lightBlueAccent,
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: <Widget>[
+      ),
+      body: Material(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            children: [
+              Stack(children: [
                 Container(
-                  height: 400,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height/2,
                   decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/layered6.png'),
-                          fit: BoxFit.fill
-                      )
+                    gradient: new LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 89, 84, 229),
+                          Color.fromARGB(255, 180, 115, 203)
+                        ]
+                    ),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(90),
+                      bottomRight: Radius.circular(90),
+                    ),
                   ),
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                        child: FadeAnimation(1.6, Container(
-                          margin: EdgeInsets.only(top: 10),
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit:BoxFit.fill,
-                                  image: AssetImage('assets/images/onbord3.png',
-                                  )
-                              )
-                          ),
-                        )
-                        ),
-                       ),
-                    ],
+                ),
+
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height/2.5,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(90),
+                      bottomRight: Radius.circular(90),
+                    ),
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      "assets/images/football1.png",
+                      scale: 0.8,
+                    ),
                   ),
                 ),
                 Positioned(
-                  child: FadeAnimation(1.6, Container(
-                    margin: EdgeInsets.only(top: 10),
+                  child: FadeAnimation(1.8, Container(
                     child: Center(
-                      child: Text("KRITERIA PEMAIN",
-                        // textAlign: TextAlign.justify,
-                        style: TextStyle( color: Colors.black54, fontSize: 40, fontWeight: FontWeight.bold),),
+                      child: Text("KRITERIA PARA PEMAIN",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 1,
+                          wordSpacing: 2,
+                        ) ,
+                      ),
                     ),
-                  )
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: DataTable(
-                      columnSpacing: 10,
-                      horizontalMargin: 10,
-                      columns: [
-                        DataColumn(label: Text('Posisi',style: TextStyle(color: Colors.black54, fontSize: 10, fontWeight: FontWeight.bold),),
-                        ),
-                        DataColumn(label: Text('Teknik Da'
-    'sar',style: TextStyle(color: Colors.black54, fontSize: 10, fontWeight: FontWeight.bold),),
-                        ),
-                        DataColumn(label: Text('Skill',style: TextStyle(color: Colors.black54, fontSize: 10, fontWeight: FontWeight.bold),),
-                        ),
-                        DataColumn(label: Text('Individual Defend',style: TextStyle(color: Colors.black54, fontSize: 10, fontWeight: FontWeight.bold),),
-                        ),
-                        DataColumn(label: Text('Postur',style: TextStyle(color: Colors.black54, fontSize: 10, fontWeight: FontWeight.bold),),
-                        ),
-                      ],
-                      rows: <DataRow>[
-                            DataRow(cells: <DataCell> [
-                            DataCell(Text('Kiper',style: TextStyle(color: Colors.black54, fontSize: 10), )),
-                              DataCell(Text('Body Shape, Distribusi, Tangkapan, Shoot Stooping',style: TextStyle(color: Colors.black54, fontSize: 10), )),
-                              DataCell(Text('Team Work, Mental, Intelegency, Visi Misi bertanding',style: TextStyle(color: Colors.black54, fontSize: 10), )),
-                              DataCell(Text('Intersept, Body Shape, Fighting Spirit, Edurance, Fisik',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                              DataCell(Text('Tinggi Badan , Berat Badan',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                          ],
-                            ),
-                          DataRow(cells: <DataCell> [
-                          DataCell(Text('Anchor',style: TextStyle(color: Colors.black54, fontSize: 10, ),)),
-                            DataCell(Text('Pasing, Control',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('Team Work, Mental, Intelegency, Visi Misi bertanding',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('Intersept, Body Shape, Fighting Spirit, Edurance, Fisik',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('-',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                        ],
-                        ),
-                        DataRow(cells: <DataCell> [
-                          DataCell(Text('Flank',style: TextStyle(color: Colors.black54, fontSize: 10,), )),
-                            DataCell(Text('Shooting, Dribble, Agility',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('Team Work, Mental, Intelegency, Visi Misi bertanding',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('Intersept, Body Shape, Fighting Spirit, Edurance, Fisik',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('-',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                        ],
-                        ),
-                        DataRow(cells: <DataCell> [
-                          DataCell(Text('Pivot',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('Control, Shooting',style: TextStyle(color: Colors.black54, fontSize: 10,), )),
-                            DataCell(Text('Team Work, Mental, Intelegency, Visi Misi bertanding',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('Intersept, Body Shape, Fighting Spirit, Edurance, Fisik',style: TextStyle(color: Colors.black54, fontSize: 10, ), )),
-                            DataCell(Text('-',style: TextStyle(color: Colors.black54, fontSize: 10, ),)),
-                        ],
-                        ),
-                      ],
-                  ),
+                  )),
                 ),
               ],
-            ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  decoration: BoxDecoration(
+                    gradient: new LinearGradient(
+                        colors: [
+                         Colors.white
+                        ]
+                    ),
+                  ),
+                ),
+              ),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 120),
+                  child: MaterialButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => KriteriaKiper()));
+                    },
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                    textColor: Colors.white,
+                    padding: const EdgeInsets.all(0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 50.0,
+                      width: size.width * 0.5,
+                      decoration: new BoxDecoration(
+                          borderRadius: BorderRadius.circular(80.0),
+                          gradient: new LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 89, 84, 229),
+                                Color.fromARGB(255, 180, 115, 203)
+                              ]
+                          )
+                      ),
+                      padding: const EdgeInsets.all(0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('Mulai ',
+                            style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1,
+                            wordSpacing: 2,
+                          ), ),
+                          Icon(Icons.arrow_forward),
+                        ],
+                      )
+                  ),
+                  ),
+                ),
+              ),
+              // Container(
+
+              // ),
+
+            ],
           ),
-        )
+        ),
+
+      ),
     );
   }
 }
-
-
-

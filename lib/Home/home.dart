@@ -32,26 +32,39 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-  int currentIndex =0;
+  int currentIndex =1;
   final List<Widget> body =[
-    PemainInti(),
     PM(),
+    PemainInti(),
     Borda(),
-    ProfilePage(),
 
   ];
 
 class _HomePageState extends State<HomePage>{
-  get headline6 => null;
-
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-       elevation: 0.0,
-        backgroundColor: Colors.blue,
-      ),
+      //APP BAR
+        appBar: AppBar(
+          elevation: 0.0,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 89, 84, 229),
+                    Color.fromARGB(255, 180, 115, 203)
+                  ],
+                  begin: const FractionalOffset(0.0, 0.0),
+                  end: const FractionalOffset(1.0, 0.0),
+                  stops: [0.0, 1.0],
+                  tileMode: TileMode.clamp
+              ),
+            ),
+          ),
+        ),
+
+     //BODY
       drawer: Drawer(
        child: Container(
         decoration:BoxDecoration(
@@ -60,22 +73,42 @@ class _HomePageState extends State<HomePage>{
                 end: Alignment.bottomRight,
                 stops: [0.0, 1.0],
                 colors: [
-                  Theme.of(context).primaryColor.withOpacity(0.2),
-                  Theme.of(context).primaryColor.withOpacity(0.5),
+                  Color.fromARGB(255, 255, 255, 255),
+                  Color.fromARGB(255, 1, 70, 198)
                 ]
             )
         ) ,
+
+
+        //Profile
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const MyHeaderDrawer(),
+               SizedBox(height: 50),
+            // const MyHeaderDrawer(),
+              Container(
+                margin: const EdgeInsets.only(bottom: 20.0),
+                height: 100,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/Manager.png',),
+                  ),
+                ),
+              ),
+
               //posisi home
               Positioned(
                 child: Text("Beranda",
                   style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
                 ),
               ),
-
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text("Account"),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage()));},
+              ),
               ListTile(
                 leading: const Icon(Icons.home),
                 title: const Text("Home"),
@@ -92,7 +125,7 @@ class _HomePageState extends State<HomePage>{
                 leading: const Icon(Icons.accessibility),
                 title: const Text("Kriteria"),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const kriteriaScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const KriteriaScreen()));
                 },
               ),
               ListTile(
@@ -291,17 +324,15 @@ class _HomePageState extends State<HomePage>{
       body: body[currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,
-        color : Colors.blue,
+          color: Colors.blue,
         animationDuration: Duration(milliseconds: 300),
         onTap: ontap,
         items: [
-          Icon(Icons.home,
-            color: Colors.white,),
           Icon(Icons.account_tree,
             color: Colors.white,),
-          Icon(Icons.add_circle,
+          Icon(Icons.home,
             color: Colors.white,),
-          Icon(Icons.person,
+          Icon(Icons.add_circle,
             color: Colors.white,),
         ],
       )

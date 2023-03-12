@@ -31,11 +31,9 @@ class PM extends StatelessWidget {
                         Color.fromARGB(255, 180, 115, 203)
                       ]
                   ),
-                  // borderRadius: BorderRadius.only(
-                  //   bottomRight: Radius.circular(70),
-                  //   bottomLeft: Radius.circular(70),
-                  // ),
-                  //borderRadius: BorderRadius.only(bottomRight: Radius.circular(50)),
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(90),
+                  ),
                 ),
 
                 child: Center(
@@ -72,12 +70,12 @@ class PM extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(90),
-                    topRight: Radius.circular(90),
+                    // topRight: Radius.circular(90),
                   ),
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 30),
+                    SizedBox(height: 40),
                     Positioned(
                       child: FadeAnimation(1.8, Container(
                         child: Center(
@@ -92,9 +90,8 @@ class PM extends StatelessWidget {
                         ),
                       )),
                     ),
-                    SizedBox(height: 20,),
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(20.0),
                       child: Column(
                         children: <Widget>[
                           SizedBox(height: 10,),
@@ -108,8 +105,8 @@ class PM extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w400,
-                                  letterSpacing: 1,
-                                  wordSpacing: 2,
+                                  letterSpacing: 1.5,
+                                  wordSpacing: 2.5,
                                   // color: Colors.black,
                                 ),
                               )

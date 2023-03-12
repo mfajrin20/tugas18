@@ -16,7 +16,7 @@ class Borda extends StatelessWidget {
             Stack(children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height/3.8,
+                height: MediaQuery.of(context).size.height/3.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
@@ -32,9 +32,8 @@ class Borda extends StatelessWidget {
                       ]
                   ),
                   borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(90),
+                    bottomLeft: Radius.circular(90),
                   ),
-                  //borderRadius: BorderRadius.only(bottomRight: Radius.circular(50)),
                 ),
 
                 child: Center(
@@ -70,9 +69,11 @@ class Borda extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(90),
+                    // topLeft: Radius.circular(90),
+                    topRight: Radius.circular(90),
                   ),
                 ),
+
                 child: Column(
                   children: [
                     SizedBox(height: 40),
@@ -90,12 +91,10 @@ class Borda extends StatelessWidget {
                         ),
                       )),
                     ),
-                    SizedBox(height: 10,),
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(30.0),
                       child: Column(
                         children: <Widget>[
-                          SizedBox(height: 10,),
                           FadeAnimation(2.5, Text(
                             'Metode Borda adalah metode yang setiap anggota '
                             'kelompok memberikan nilai atau skor pada setiap alternatif yang '
@@ -107,7 +106,7 @@ class Borda extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w400,
-                              letterSpacing: 1,
+                              letterSpacing: 1.5,
                               wordSpacing: 2,
                               // color: Colors.black,
                             ),

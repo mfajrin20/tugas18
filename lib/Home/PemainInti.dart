@@ -31,10 +31,6 @@ class PemainInti extends StatelessWidget {
                         Color.fromARGB(255, 180, 115, 203)
                       ]
                   ),
-                  // borderRadius: BorderRadius.only(
-                  //   bottomRight: Radius.circular(70),
-                  // ),
-                  //borderRadius: BorderRadius.only(bottomRight: Radius.circular(50)),
                 ),
                 child: Center(
                   child: Image.asset(
@@ -70,6 +66,7 @@ class PemainInti extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(90),
+                    topRight: Radius.circular(90),
                   ),
                 ),
                 child: Column(
@@ -89,12 +86,12 @@ class PemainInti extends StatelessWidget {
                         ),
                       )),
                     ),
-                    SizedBox(height: 15,),
+
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(15.0),
                       child: Column(
                         children: <Widget>[
-                          SizedBox(height: 10,),
+                          SizedBox(height: 5,),
                           FadeAnimation(2.5, Text(
                                 'Pemain inti merupakan pemain yang paling berpengaruh dalam tim, sehingga penempatannya'
                                 ' harus tepat. Namun, pemilihan pemain inti seringkali menjadi masalah bagi pelatih'
