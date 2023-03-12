@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tugas1/Kriteria/KriteriaAnchor.dart';
 
 
@@ -9,8 +8,6 @@ class KriteriaKiper extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    final CarouselController _controller = CarouselController();
 
     return Scaffold(
       appBar: AppBar(
@@ -65,7 +62,7 @@ class KriteriaKiper extends StatelessWidget {
                   ),
                   child: Center(
                     child: Image.asset(
-                      "assets/images/football1.png",
+                      "assets/images/on3.png",
                       scale: 0.8,
                     ),
                   ),

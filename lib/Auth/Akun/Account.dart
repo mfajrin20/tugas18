@@ -1,14 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:flutter_login_ui/pages/login_page.dart';
-// import 'package:flutter_login_ui/pages/splash_screen.dart';
-// import 'package:flutter_login_ui/pages/widgets/header_widget.dart';
-//
-// import 'forgot_password_page.dart';
-// import 'forgot_password_verification_page.dart';
-// import 'registration_page.dart';
 
 class ProfilePage extends StatefulWidget{
   const ProfilePage({Key? key}) : super(key: key);
@@ -20,12 +12,26 @@ class ProfilePage extends StatefulWidget{
 
 class _ProfilePageState extends State<ProfilePage>{
 
-  double  _drawerIconSize = 24;
-  double _drawerFontSize = 17;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 89, 84, 229),
+                  Color.fromARGB(255, 180, 115, 203)
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp
+            ),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -49,9 +55,9 @@ class _ProfilePageState extends State<ProfilePage>{
                     child: Icon(Icons.person, size: 80, color: Colors.grey.shade300,),
                   ),
                   SizedBox(height: 20,),
-                  Text('Mr. Donald Trump', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+                  Text('Mr. M Fajrin', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
                   SizedBox(height: 20,),
-                  Text('Former President', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                  Text('Pelatih', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                   SizedBox(height: 10,),
                   Container(
                     padding: EdgeInsets.all(10),
@@ -61,7 +67,7 @@ class _ProfilePageState extends State<ProfilePage>{
                           padding: const EdgeInsets.only(left: 8.0, bottom: 4.0),
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "User Information",
+                            "Informasi Akun",
                             style: TextStyle(
                               color: Colors.black87,
                               fontWeight: FontWeight.w500,
@@ -85,7 +91,7 @@ class _ProfilePageState extends State<ProfilePage>{
                                           contentPadding: EdgeInsets.symmetric(
                                               horizontal: 12, vertical: 4),
                                           leading: Icon(Icons.my_location),
-                                          title: Text("Location"),
+                                          title: Text("Alamat"),
                                           subtitle: Text("USA"),
                                         ),
                                         ListTile(
@@ -97,12 +103,6 @@ class _ProfilePageState extends State<ProfilePage>{
                                           leading: Icon(Icons.phone),
                                           title: Text("Phone"),
                                           subtitle: Text("99--99876-56"),
-                                        ),
-                                        ListTile(
-                                          leading: Icon(Icons.person),
-                                          title: Text("About Me"),
-                                          subtitle: Text(
-                                              "This is a about me link and you can khow about me in this section."),
                                         ),
                                       ],
                                     ),

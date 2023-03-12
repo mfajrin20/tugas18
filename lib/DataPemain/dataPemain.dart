@@ -2,77 +2,121 @@ import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
 import 'package:tugas1/DataPemain/inputDataPemain.dart';
 
+
+
 class dataPemain extends StatelessWidget {
   const dataPemain ({Key? key}) : super(key: key);
-
   @override
+
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text("Data Pemain",textAlign: TextAlign.justify,),
-        ),
-        backgroundColor: Colors.lightBlueAccent,
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 400,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/layered5.png'),
-                          fit: BoxFit.fill
-                      )
-                  ),
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                          left: 20,
-                          top: 20,
-                          width: 120,
-                          height: 120,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  fit:BoxFit.fill,
-                                    image: AssetImage('assets/images/team.png'),
-                                )
-                            ),
-                          )),
-
-                      Positioned(
-                        child: FadeAnimation(1.6, Container(
-                          margin: EdgeInsets.only(top: 40),
-                          child: Center(
-                            child: Text("DATA PEMAIN",
-                              // textAlign: TextAlign.justify,
-                              style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),),
-                          ),
-                        )),
-                      )
-                    ],
-                  ),
-                ),
-              ],
+          elevation: 0.0,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 89, 84, 229),
+                    Color.fromARGB(255, 180, 115, 203)
+                  ],
+                  begin: const FractionalOffset(0.0, 0.0),
+                  end: const FractionalOffset(1.0, 0.0),
+                  stops: [0.0, 1.0],
+                  tileMode: TileMode.clamp
+              ),
             ),
           ),
         ),
-          floatingActionButton: FloatingActionButton(
-          child: Icon(
-            Icons.add,
-            size: 30,
-            color: Colors.blueAccent,
+        body: Material(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: [
+                Stack(children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height/8,
+                    decoration: BoxDecoration(
+                      gradient: new LinearGradient(
+                          colors: [
+                            Color.fromARGB(255, 89, 84, 229),
+                            Color.fromARGB(255, 180, 115, 203)
+                          ]
+                      ),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(90),
+                        bottomRight: Radius.circular(90),
+                      ),
+                    ),
+                    child: Container(
+                      child: FadeAnimation(1.3, Container(
+                        child: Center(
+                          child: Text("DATA PEMAIN",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1,
+                              wordSpacing: 2,
+                            ) ,
+                          ),
+                        ),
+                      )),
+                    ),
+                  ),
+
+                ],
+                ),
+                // Align(
+                //   alignment: Alignment.bottomCenter,
+                //   child: Container(
+                //     width: MediaQuery.of(context).size.width,
+                //     height: MediaQuery.of(context).size.height/3,
+                //     decoration: BoxDecoration(
+                //       gradient: new LinearGradient(
+                //           colors: [
+                //             Color.fromARGB(255, 89, 84, 229),
+                //             Color.fromARGB(255, 180, 115, 203)
+                //           ]
+                //       ),
+                //     ),
+                //   ),
+                // ),
+              ],
+            ),
           ),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(50))),
-          onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const inputDataPemain()));},
-          backgroundColor: Colors.white,
+
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Container(
+            width: 50,
+            height: 50,
+            child: Icon(
+              Icons.add,
+              size: 40,
+            ),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient
+                  (colors: [
+                  Color.fromARGB(255, 89, 84, 229),
+                  Color.fromARGB(255, 180, 115, 203)
+                ])
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context) => const inputDataPemain()));
+          },
+        )
     );
   }
 }
-
-
-

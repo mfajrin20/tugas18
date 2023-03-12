@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:select_form_field/select_form_field.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
-import '../Auth/components/backgroundInputDataPemain.dart';
+import 'backgroundInputDataPemain.dart';
 
 class inputDataPemain extends StatelessWidget {
   const inputDataPemain({Key? key}) : super(key: key);
@@ -28,6 +28,23 @@ class inputDataPemain extends StatelessWidget {
       },
     ];
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 89, 84, 229),
+                  Color.fromARGB(255, 180, 115, 203)
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp
+            ),
+          ),
+        ),
+      ),
       body: backgroundInputDataPemain(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,11 +60,9 @@ class inputDataPemain extends StatelessWidget {
                       color: Color(0xFF2661FA),
                       fontSize: 30
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ),
             ),
-            SizedBox(height: 10),
 
             Padding(
               padding: EdgeInsets.all(30.0),
@@ -92,14 +107,14 @@ class inputDataPemain extends StatelessWidget {
                             TextFormField(
                               //memberikan identitas untuk setiap form
                               decoration: InputDecoration(
-                                hintText: "Ketik Gmail",
-                                labelText: "Gmail",
-                                icon: Icon(Icons.email),
+                                hintText: "Ketik Sekolah",
+                                labelText: "Sekolah",
+                                icon: Icon(Icons.school_outlined),
                               ),
                               //memberikan validasi jika form kosong
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return 'Gmail tidak boleh kosong';
+                                  return 'Sekolah tidak boleh kosong';
                                 }
                                 return null;
                               },
@@ -137,7 +152,6 @@ class inputDataPemain extends StatelessWidget {
                           ],
                         ),
                       )),
-                  SizedBox(height: 50),
                 ],
               ),
             ),
@@ -159,8 +173,8 @@ class inputDataPemain extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   child: Container(
                     alignment: Alignment.center,
-                    height: 50.0,
-                    width: size.width * 0.5,
+                    height: 40.0,
+                    width: size.width * 0.3,
                     decoration: new BoxDecoration(
                         borderRadius: BorderRadius.circular(80.0),
                         gradient: new LinearGradient(
@@ -185,7 +199,7 @@ class inputDataPemain extends StatelessWidget {
           ],
         ),
       ),
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset : false,
     );
   }
 }
