@@ -65,7 +65,7 @@ class KriteriaFlank extends StatelessWidget {
                   ),
                   child: Center(
                     child: Image.asset(
-                      "assets/images/football1.png",
+                      "assets/images/Flank.png",
                       scale: 0.8,
                     ),
                   ),

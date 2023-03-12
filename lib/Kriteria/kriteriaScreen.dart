@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tugas1/Kriteria/KriteriaAnchor.dart';
 import 'package:tugas1/Kriteria/KriteriaKiper.dart';
 
 

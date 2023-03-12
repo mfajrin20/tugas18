@@ -62,7 +62,7 @@ class KriteriaKiper extends StatelessWidget {
                   ),
                   child: Center(
                     child: Image.asset(
-                      "assets/images/on3.png",
+                      "assets/images/Kiper.png",
                       scale: 0.8,
                     ),
                   ),

@@ -7,7 +7,6 @@ class KriteriaPivot extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -62,7 +61,7 @@ class KriteriaPivot extends StatelessWidget {
                   ),
                   child: Center(
                     child: Image.asset(
-                      "assets/images/football1.png",
+                      "assets/images/Pivot.png",
                       scale: 0.8,
                     ),
                   ),

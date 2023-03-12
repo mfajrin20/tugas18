@@ -63,7 +63,7 @@ class KriteriaAnchor extends StatelessWidget {
                   ),
                   child: Center(
                     child: Image.asset(
-                      "assets/images/football1.png",
+                      "assets/images/Anchor.png",
                       scale: 0.8,
                     ),
                   ),

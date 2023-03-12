@@ -13,6 +13,7 @@ import 'package:tugas1/Home/Borda.dart';
 import 'package:tugas1/Home/PemainInti.dart';
 import 'package:tugas1/Home/header_drawer.dart';
 import 'package:tugas1/Kriteria/kriteriaScreen.dart';
+import 'package:tugas1/ProfileMatching/Hasil/HasilScreen.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilAnchor.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilFlank.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilKiper.dart';
@@ -113,7 +114,7 @@ class _HomePageState extends State<HomePage>{
                 leading: const Icon(Icons.home),
                 title: const Text("Home"),
                 onTap: () {
-                  Navigator.pop(context,MaterialPageRoute(builder: (context) => const PemainInti()));},
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));},
               ),
               ListTile(
                 leading: const Icon(Icons.photo_album_outlined),
@@ -184,40 +185,14 @@ class _HomePageState extends State<HomePage>{
                 ],
               ),
 
-              ExpansionTile(
-                title: Text("Hasil"),
-                leading: Icon(Icons.add_circle_outline), //add icon
-                childrenPadding: EdgeInsets.only(left:30), //children padding
-                children: [
-                  ListTile(
-                    title: Text("Kiper"),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilKiper()));
-                    },
-                  ),
-
-                  ListTile(
-                    title: Text("Anchor"),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilAnchor()));
-                    },
-                  ),
-
-                  ListTile(
-                    title: Text("Flank"),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilFlank()));
-                    },
-                  ),
-
-                  ListTile(
-                    title: Text("Pivot"),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilPivot()));
-                    },
-                  ),
-                ],
+              ListTile(
+                leading: const Icon(Icons.add_circle_outline),
+                title: const Text("Hasil"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HasilScreen()));
+                },
               ),
+
 
               //posisi borda
               Positioned(
