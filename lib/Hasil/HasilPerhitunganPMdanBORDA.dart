@@ -2,92 +2,218 @@ import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
 
 
+
 class HasilPerhitunganPMdanBorda extends StatelessWidget {
   const HasilPerhitunganPMdanBorda ({Key? key}) : super(key: key);
-
   @override
+
   Widget build(BuildContext context) {
 
     return Scaffold(
-
-      backgroundColor: Colors.blue[300],
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text("Hasil Pemilihan Pemain Inti",textAlign: TextAlign.justify,),
+        elevation: 0.0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 89, 84, 229),
+                  Color.fromARGB(255, 180, 115, 203)
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp
+            ),
+          ),
+        ),
       ),
-
-      body: SingleChildScrollView(
+      body: Material(
         child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 150,
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: FadeAnimation(1.6, Container(
-                        // margin: EdgeInsets.only(top: 20),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit:BoxFit.fill,
-                                image: AssetImage('assets/images/layered7.png'),
-                              )
-                          ),
-                        ),
-                      ),
-                      ),
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            children: [
+              Stack(children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  decoration: BoxDecoration(
+                    gradient: new LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 89, 84, 229),
+                          Color.fromARGB(255, 180, 115, 203)
+                        ]
                     ),
-
-                    Positioned(
-                        left: 10,
-                        width: 80,
-                        height: 80,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/images/goalkeeper.png')
-                              )
-                          ),
-                        )),
-                    SizedBox(height: 500),
-                    Positioned(
-                      child: FadeAnimation(1.6, Container(
-                        margin: EdgeInsets.only(top: 70),
-                        child: Center(
-                          child: Text("HASIL PEMILIHAN PEMAIN INTI", style: TextStyle(color: Colors.black54, fontSize: 20, fontWeight: FontWeight.bold),),
-                        ),
-                      )),
-                    ),
-
-                  ],
+                  ),
                 ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height/2,
+                  decoration: BoxDecoration(
+                    gradient: new LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 89, 84, 229),
+                          Color.fromARGB(255, 180, 115, 203)
+                        ]
+                    ),
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      "assets/images/PemainInti.png",
+                      scale: 0.8,
+                    ),
+                  ),
+                ),
+              ],
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height/3.5,
+                  decoration: BoxDecoration(
+                    gradient: new LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 89, 84, 229),
+                          Color.fromARGB(255, 180, 115, 203)
+                        ]
+                    ),
+                  ),
+                ),
+
               ),
 
-             // Hasil
-
-
-
-
-              //Memberikan jarak
-              SizedBox(height: 350),
-              Container(
-                height: 150,
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: FadeAnimation(1.6, Container(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit:BoxFit.fill,
-                                image: AssetImage('assets/images/layered8.png'),
-                              )
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height/2,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(180),
+                      topRight: Radius.circular(180),
+                      bottomRight: Radius.circular(180),
+                      bottomLeft: Radius.circular(180),
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20),
+                      Positioned(
+                        child: FadeAnimation(1.8, Container(
+                          child: Center(
+                            child: Text("HASIL",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 1,
+                                wordSpacing: 1,
+                              ) ,
+                            ),
                           ),
+                        )),
+                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.all(5.0),
+                      //
+                      // ),
+                      Padding(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 10),
+                            FadeAnimation(2.5,
+                              DataTable(
+                                columnSpacing: 10,
+                                horizontalMargin: 10,
+                                columns: [
+                                  DataColumn(label: Text('KIPER',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                      wordSpacing: 2,
+                                    ),
+                                  ),
+                                  ),
+                                  DataColumn(label: Text('ACHOR',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                      wordSpacing: 2,
+                                    ),
+                                  ),
+                                  ),
+                                  DataColumn(label: Text('FLANK ',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                      wordSpacing: 1,
+                                    ),
+                                  ),
+                                  ),
+                                  DataColumn(label: Text('PIVOT',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                      wordSpacing: 2,
+                                    ),
+                                  ),
+                                  ),
+                                ],
+                                rows: <DataRow>[
+                                  DataRow(cells: <DataCell> [
+                                    DataCell(Text('Nama pemain yang lolos',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                        letterSpacing: 1,
+                                        wordSpacing: 1,
+                                      ),)),
+                                    DataCell(Text('Nama pemain yang lolos',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                        letterSpacing: 1,
+                                        wordSpacing: 1,
+                                      ), )),
+                                    DataCell(Text('Nama pemain yang lolos 2 orang',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                        letterSpacing: 1,
+                                        wordSpacing: 1,
+                                      ), )),
+                                    DataCell(Text('Nama pemain yang lolos',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                        letterSpacing: 1,
+                                        wordSpacing: 1,
+                                      ), )),
+                                  ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      )),
-                    )
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -97,10 +223,3 @@ class HasilPerhitunganPMdanBorda extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-

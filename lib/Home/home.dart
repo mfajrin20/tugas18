@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:tabler_icons/tabler_icons.dart';
 import 'package:tugas1/Album/AlbumScreen.dart';
 import 'package:tugas1/Borda/Posisi/Anchor.dart';
 import 'package:tugas1/Borda/Posisi/Flank.dart';
@@ -303,11 +304,11 @@ class _HomePageState extends State<HomePage>{
         animationDuration: Duration(milliseconds: 300),
         onTap: ontap,
         items: [
-          Icon(Icons.account_tree,
+          Icon(TablerIcons.brand_tinder,
             color: Colors.white,),
-          Icon(Icons.home,
+          Icon(TablerIcons.home,
             color: Colors.white,),
-          Icon(Icons.add_circle,
+          Icon(TablerIcons.circle_rectangle,
             color: Colors.white,),
         ],
       )
