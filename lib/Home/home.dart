@@ -22,6 +22,7 @@ import '../Auth/Akun/Account.dart';
 
 
 
+
 enum DialogsAction { yes, cancel }
 
 class HomePage extends StatefulWidget {
@@ -114,6 +115,7 @@ class _HomePageState extends State<HomePage>{
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage()));},
               ),
+
               ListTile(
                 leading: const Icon(TablerIcons.home_2,
                   color: Colors.white,),
