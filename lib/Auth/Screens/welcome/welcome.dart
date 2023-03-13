@@ -25,9 +25,11 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     "SELAMAT DATANG",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF2661FA),
-                        fontSize: 20
+                      fontSize: 16,
+                      color: Color(0xFF2661FA),
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 3,
+                      wordSpacing: 2,
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -43,9 +45,11 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     "PELATIH PORPROV",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF2661FA),
-                        fontSize: 15
+                      fontSize: 13,
+                      color: Color(0xFF2661FA),
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 3,
+                      wordSpacing: 2,
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -101,7 +105,11 @@ class WelcomeScreen extends StatelessWidget {
                         "LOGIN",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 3,
+                          wordSpacing: 2,
                         ),
                       ),
                     ),
@@ -142,7 +150,11 @@ class WelcomeScreen extends StatelessWidget {
                         "SIGN UP",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 3,
+                          wordSpacing: 2,
                         ),
                       ),
                     ),

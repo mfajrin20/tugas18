@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabler_icons/tabler_icons.dart';
 import 'package:tugas1/Auth/Screens/login/login.dart';
 import 'package:tugas1/Auth/components/background.dart';
 import 'package:tugas1/Home/home.dart';
@@ -20,22 +21,24 @@ class RegisterScreen extends StatelessWidget {
               child: Text(
                 "REGISTER",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF2661FA),
-                  fontSize: 36
+                  fontSize: 36,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 3,
+                  wordSpacing: 2,
                 ),
                 textAlign: TextAlign.left,
               ),
             ),
 
-
-
             Container(
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: "Name"
+                  labelText: "Name",
+                  icon:Icon(TablerIcons.user,
+                    color: Colors.blue,),
                 ),
               ),
             ),
@@ -46,7 +49,9 @@ class RegisterScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: "Gmail"
+                  labelText: "Gmail",
+                  icon:Icon(TablerIcons.mail,
+                    color: Colors.blue,),
                 ),
               ),
             ),
@@ -57,11 +62,12 @@ class RegisterScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: "Password"
+                  labelText: "Password",
+                  icon:Icon(TablerIcons.password,
+                    color: Colors.blue,),
                 ),
               ),
             ),
-
 
 
             Container(
@@ -69,7 +75,9 @@ class RegisterScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: "Password Again"
+                  labelText: "Password Again",
+                  icon:Icon(TablerIcons.password,
+                    color: Colors.blue,),
                 ),
                 obscureText: true,
               ),
@@ -105,7 +113,11 @@ class RegisterScreen extends StatelessWidget {
                     "SIGN UP",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontWeight: FontWeight.bold
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 3,
+                      wordSpacing: 2,
                     ),
                   ),
                 ),
@@ -122,10 +134,12 @@ class RegisterScreen extends StatelessWidget {
                 child: Text(
                   "Already Have an Account? Sign in",
                   style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF2661FA)
-                  ),
+                  fontSize: 12,
+                  color: Color(0xFF2661FA),
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 2,
+                ),
                 ),
               ),
             )
