@@ -98,7 +98,13 @@ class _HomePageState extends State<HomePage>{
               //posisi home
               Positioned(
                 child: Text("Beranda",
-                  style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1,
+                      wordSpacing: 2,
+                    ),
                 ),
               ),
               ListTile(
@@ -192,8 +198,13 @@ class _HomePageState extends State<HomePage>{
 
               //posisi pm
               Positioned(
-                child: Text("Profile Matching",textAlign: TextAlign.justify,
-                  style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                child: Text("Profile Matching",style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 2,
+                ),
                 ),
               ),
               ExpansionTile(
@@ -286,8 +297,13 @@ class _HomePageState extends State<HomePage>{
 
               //posisi borda
               Positioned(
-                child: const Text("Borda",textAlign: TextAlign.justify,
-                  style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                child: const Text("Borda",style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 2,
+                ),
                 ),
               ),
               ExpansionTile(
@@ -364,8 +380,13 @@ class _HomePageState extends State<HomePage>{
 
               //posisi hasil
               Positioned(
-                child: Text("Hasil",textAlign: TextAlign.justify,
-                  style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                child: Text("Hasil",style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 2,
+                ),
                 ),
               ),
               ListTile(
@@ -385,8 +406,13 @@ class _HomePageState extends State<HomePage>{
               ),
 
               Positioned(
-                child: Text("keluar",textAlign: TextAlign.justify,
-                  style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                child: Text("keluar",style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 2,
+                ),
                 ),
               ),
               ListTile(

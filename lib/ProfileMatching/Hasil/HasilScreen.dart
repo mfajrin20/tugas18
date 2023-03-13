@@ -100,7 +100,13 @@ class _HasilScreenState extends State<HasilScreen>{
                   //posisi home
                   Positioned(
                     child: Text("Beranda",
-                      style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),
                     ),
                   ),
                   ListTile(
@@ -195,7 +201,13 @@ class _HasilScreenState extends State<HasilScreen>{
                   //posisi pm
                   Positioned(
                     child: Text("Profile Matching",textAlign: TextAlign.justify,
-                      style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),
                     ),
                   ),
                   ExpansionTile(
@@ -289,7 +301,13 @@ class _HasilScreenState extends State<HasilScreen>{
                   //posisi borda
                   Positioned(
                     child: const Text("Borda",textAlign: TextAlign.justify,
-                      style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),
                     ),
                   ),
                   ExpansionTile(
@@ -367,7 +385,13 @@ class _HasilScreenState extends State<HasilScreen>{
                   //posisi hasil
                   Positioned(
                     child: Text("Hasil",textAlign: TextAlign.justify,
-                      style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),
                     ),
                   ),
                   ListTile(
@@ -388,7 +412,13 @@ class _HasilScreenState extends State<HasilScreen>{
 
                   Positioned(
                     child: Text("keluar",textAlign: TextAlign.justify,
-                      style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),
                     ),
                   ),
                   ListTile(
