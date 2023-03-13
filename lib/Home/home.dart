@@ -19,10 +19,10 @@ import 'package:tugas1/ProfileMatching/Hasil/hasilAnchor.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilFlank.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilKiper.dart';
 import 'package:tugas1/ProfileMatching/Hasil/hasilPivot.dart';
-import 'package:tugas1/ProfileMatching/Posisi/Kiper.dart';
-import 'package:tugas1/ProfileMatching/Posisi/Anchor.dart';
-import 'package:tugas1/ProfileMatching/Posisi/Flank.dart';
-import 'package:tugas1/ProfileMatching/Posisi/Pivot.dart';
+import 'package:tugas1/ProfileMatching/Posisi/Kiper/Kiper.dart';
+import 'package:tugas1/ProfileMatching/Posisi/Anchor/Anchor.dart';
+import 'package:tugas1/ProfileMatching/Posisi/Flank/Flank.dart';
+import 'package:tugas1/ProfileMatching/Posisi/Pivot/Pivot.dart';
 import '../Auth/Akun/Account.dart';
 
 
