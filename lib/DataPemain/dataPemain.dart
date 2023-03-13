@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
-import 'package:tugas1/DataPemain/inputDataPemain.dart';
+import 'package:tugas1/DataPemain/AddDataPemain.dart';
 
 
 

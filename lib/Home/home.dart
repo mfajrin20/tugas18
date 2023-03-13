@@ -2,23 +2,18 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 import 'package:tugas1/Album/AlbumScreen.dart';
-import 'package:tugas1/Borda/Posisi/Anchor.dart';
-import 'package:tugas1/Borda/Posisi/Flank.dart';
-import 'package:tugas1/Borda/Posisi/Kiper.dart';
-import 'package:tugas1/Borda/Posisi/Pivot.dart';
+import 'package:tugas1/Borda/Hasil/Anchor/HasilBordaAnchor.dart';
+import 'package:tugas1/Borda/Hasil/Flank/HasilBordaFlank.dart';
+import 'package:tugas1/Borda/Hasil/Kiper/HasilBordaKiper.dart';
+import 'package:tugas1/Borda/Hasil/Pivot/HasilBordaPivot.dart';
 import 'package:tugas1/DataPelatih/dataPelatih.dart';
 import 'package:tugas1/DataPemain/dataPemain.dart';
 import 'package:tugas1/Hasil/HasilPerhitunganPMdanBORDA.dart';
 import 'package:tugas1/Home/PM.dart';
 import 'package:tugas1/Home/Borda.dart';
 import 'package:tugas1/Home/PemainInti.dart';
-import 'package:tugas1/Home/header_drawer.dart';
 import 'package:tugas1/Kriteria/kriteriaScreen.dart';
 import 'package:tugas1/ProfileMatching/Hasil/HasilScreen.dart';
-import 'package:tugas1/ProfileMatching/Hasil/hasilAnchor.dart';
-import 'package:tugas1/ProfileMatching/Hasil/hasilFlank.dart';
-import 'package:tugas1/ProfileMatching/Hasil/hasilKiper.dart';
-import 'package:tugas1/ProfileMatching/Hasil/hasilPivot.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Kiper/Kiper.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Anchor/Anchor.dart';
 import 'package:tugas1/ProfileMatching/Posisi/Flank/Flank.dart';
@@ -75,8 +70,8 @@ class _HomePageState extends State<HomePage>{
                 end: Alignment.bottomRight,
                 stops: [0.0, 1.0],
                 colors: [
-                  Color.fromARGB(255, 255, 255, 255),
-                  Color.fromARGB(255, 1, 70, 198)
+                  Color.fromARGB(255, 89, 84, 229),
+                  Color.fromARGB(255, 200, 158, 215)
                 ]
             )
         ) ,
@@ -106,40 +101,88 @@ class _HomePageState extends State<HomePage>{
                 ),
               ),
               ListTile(
-                leading: const Icon(Icons.person),
-                title: const Text("Account"),
+                leading: const Icon(TablerIcons.user,
+                  color: Colors.white,),
+                title: const Text("Account",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage()));},
               ),
               ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text("Home"),
+                leading: const Icon(TablerIcons.home_2,
+                  color: Colors.white,),
+                title: const Text("Home",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));},
               ),
               ListTile(
-                leading: const Icon(Icons.photo_album_outlined),
-                title: const Text("Album"),
+                leading: const Icon(TablerIcons.album,
+                  color: Colors.white,),
+                title: const Text("Album",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context) => const AlbumScreen()));},
               ),
               ListTile(
-                leading: const Icon(Icons.accessibility),
-                title: const Text("Kriteria"),
+                leading: const Icon(TablerIcons.user_check,
+                  color: Colors.white,),
+                title: const Text("Kriteria",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const KriteriaScreen()));
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.people),
-                title: const Text("Data Pelatih"),
+                leading: const Icon(TablerIcons.jacket,
+                  color: Colors.white,),
+                title: const Text("Data Pelatih",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const dataPelatih()));
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.people),
-                title: const Text("Data Pemain"),
+                leading: const Icon(TablerIcons.users,
+                  color: Colors.white,),
+                title: const Text("Data Pemain",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                    Navigator.push(context, MaterialPageRoute(builder: (context) => const dataPemain()));
                 },
@@ -152,33 +195,69 @@ class _HomePageState extends State<HomePage>{
                 ),
               ),
               ExpansionTile(
-                title: Text("Input Data"),
-                leading: Icon(Icons.ac_unit), //add icon
+                title: Text("Input Data",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
+                leading: Icon(TablerIcons.analyze_filled,
+                  color: Colors.white,),//add icon
                 childrenPadding: EdgeInsets.only(left:30), //children padding
                 children: [
                   ListTile(
-                    title: Text("Kiper"),
+                    title: Text("Kiper",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Kiper()));
                     },
                   ),
 
                   ListTile(
-                    title: Text("Anchor"),
+                    title: Text("Anchor",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Anchor()));
                     },
                   ),
 
                   ListTile(
-                    title: Text("Flank"),
+                    title: Text("Flank",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Flank()));
                     },
                   ),
 
                   ListTile(
-                    title: Text("Pivot"),
+                    title: Text("Pivot",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Pivot()));
                     },
@@ -187,8 +266,16 @@ class _HomePageState extends State<HomePage>{
               ),
 
               ListTile(
-                leading: const Icon(Icons.add_circle_outline),
-                title: const Text("Hasil"),
+                leading: const Icon(TablerIcons.clipboard_data,
+                  color: Colors.white,),
+                title: const Text("Hasil",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const HasilScreen()));
                 },
@@ -202,35 +289,71 @@ class _HomePageState extends State<HomePage>{
                 ),
               ),
               ExpansionTile(
-                title: Text("Perangkingan"),
-                leading: Icon(Icons.group_remove_sharp), //add icon
+                title: Text("Perangkingan",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
+                leading: const Icon(TablerIcons.military_rank,
+                  color: Colors.white,), //add icon
                 childrenPadding: EdgeInsets.only(left:30), //children padding
                 children: [
                   ListTile(
-                    title: Text("Kiper"),
+                    title: Text("Kiper",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BordaKiper()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilBordaKiper()));
                     },
                   ),
 
                   ListTile(
-                    title: Text("Anchor"),
+                    title: Text("Anchor",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BordaAnchor()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilBordaAnchor()));
                     },
                   ),
 
                   ListTile(
-                    title: Text("Flank"),
+                    title: Text("Flank",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BordaFlank()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilBordaFlank()));
                     },
                   ),
 
                   ListTile(
-                    title: Text("Pivot"),
+                    title: Text("Pivot",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BordaPivot()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const hasilBordaPivot()));
                     },
                   ),
                 ],
@@ -244,8 +367,16 @@ class _HomePageState extends State<HomePage>{
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.receipt_long), //add icon
-                title: Text("Hasil"),
+                leading: Icon(TablerIcons.certificate_2,
+                  color: Colors.white,),//add icon
+                title: Text("Hasil",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const HasilPerhitunganPMdanBorda()));
                 },
@@ -257,22 +388,43 @@ class _HomePageState extends State<HomePage>{
                 ),
               ),
               ListTile(
-                leading: const Icon(Icons.logout),
-                title: Text('Log Out'),
+                leading: Icon(TablerIcons.brand_gravatar,
+                  color: Colors.white,),
+                title: Text('Log Out',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
+                  ),),
                 onTap: () {
                   showDialog(
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          content: Text('Penilaian Anda akan disimpan. Kami akan menunggu Anda kembali !'),
+                          content: Text('Penilaian Anda akan disimpan. Kami akan menunggu Anda kembali !',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1,
+                              wordSpacing: 2,
+                            ),),
                           actions: <Widget>[
                             MaterialButton(
                                 onPressed: ()
                                 {
                                  // Navigator.push(context, MaterialPageRoute(builder: (context) => const ()));
                                 },
-                                child: Text('Log Out',style: TextStyle(
-                                    color: Color(0xFFC41A3B)),
+                                child: Text('Log Out',
+                                  style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFFC41A3B),
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2,
+                                ),
                                 )
                             ),
                             MaterialButton(
@@ -280,8 +432,13 @@ class _HomePageState extends State<HomePage>{
                                   Navigator.of(context).pop(DialogsAction.cancel),
                               child: Text(
                                 'Cancel',
-                                style: TextStyle(
-                                    color: Color(0xFF4756DF)),
+                                  style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF4756DF),
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2,
+                                  ),
                               )
                             ),
                           ],

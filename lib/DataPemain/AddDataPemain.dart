@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:select_form_field/select_form_field.dart';
+import 'package:tabler_icons/tabler_icons.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
 import 'backgroundInputDataPemain.dart';
 
@@ -56,9 +57,11 @@ class inputDataPemain extends StatelessWidget {
                 child: Text(
                   "PEMAIN",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2661FA),
-                      fontSize: 30
+                    fontSize: 30,
+                    color: Color(0xFF2661FA),
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1,
+                    wordSpacing: 2,
                   ),
                 ),
               ),
@@ -79,7 +82,8 @@ class inputDataPemain extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: "Ketik Nama Lengkap",
                                 labelText: "Nama Lengkap",
-                                icon: Icon(Icons.person),
+                                icon: Icon(TablerIcons.user,
+                                  color: Colors.black,),
                               ),
                               //memberikan validasi jika form kosong
                               validator: (value) {
@@ -94,7 +98,8 @@ class inputDataPemain extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: "Ketik Alamat",
                                 labelText: "Alamat ",
-                                icon: Icon(Icons.maps_home_work_outlined),
+                                icon: Icon(TablerIcons.map_pin,
+                                  color: Colors.black,),
                               ),
                               //memberikan validasi jika form kosong
                               validator: (value) {
@@ -109,7 +114,8 @@ class inputDataPemain extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: "Ketik Sekolah",
                                 labelText: "Sekolah",
-                                icon: Icon(Icons.school_outlined),
+                                icon: Icon(TablerIcons.school,
+                                  color: Colors.black,),
                               ),
                               //memberikan validasi jika form kosong
                               validator: (value) {
@@ -124,7 +130,8 @@ class inputDataPemain extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: "Ketik Telepon",
                                 labelText: "Telepon",
-                                icon: Icon(Icons.phone),
+                                icon: Icon(TablerIcons.phone,
+                                  color: Colors.black,),
                               ),
                               //memberikan validasi jika form kosong
                               validator: (value) {
@@ -137,7 +144,8 @@ class inputDataPemain extends StatelessWidget {
                             SelectFormField(
                               type: SelectFormFieldType.dropdown, // or can be dialog
                               initialValue: 'circle',
-                              icon: Icon(Icons.border_color_outlined),
+                              icon:  Icon(TablerIcons.edit_circle,
+                                color: Colors.black,),
                               labelText: 'Posisi',
                               items: _Posisi,
                               onChanged: (val) => print(val),

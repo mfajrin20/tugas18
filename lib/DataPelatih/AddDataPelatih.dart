@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tabler_icons/tabler_icons.dart';
 import 'package:tugas1/Animation/FadeAnimation.dart';
 import 'backgroundInputDataPelatih.dart';
-
 
 class inputDataPelatih extends StatelessWidget {
   const inputDataPelatih({Key? key}) : super(key: key);
@@ -50,7 +50,8 @@ class inputDataPelatih extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Ketik Nama Lengkap",
                   labelText: "Nama Lengkap",
-                  icon: Icon(Icons.person),
+                  icon:Icon(TablerIcons.user,
+                    color: Colors.black,),
                 ),
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -70,7 +71,8 @@ class inputDataPelatih extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Ketik Alamat",
                   labelText: "Alamat",
-                  icon: Icon(Icons.maps_home_work_outlined),
+                  icon: Icon(TablerIcons.map_pin,
+                    color: Colors.black,),
                 ),
                 //memberikan validasi jika form kosong
                 validator: (value) {
@@ -91,7 +93,8 @@ class inputDataPelatih extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Ketik Gmail",
                   labelText: "Gmail",
-                  icon: Icon(Icons.email),
+                  icon: Icon(TablerIcons.mail,
+                    color: Colors.black,),
                 ),
                 //memberikan validasi jika form kosong
                 validator: (value) {
@@ -112,7 +115,8 @@ class inputDataPelatih extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Ketik Telepon",
                   labelText: "Telepon",
-                  icon: Icon(Icons.phone),
+                  icon: Icon(TablerIcons.phone,
+                    color: Colors.black,),
                 ),
                 //memberikan validasi jika form kosong
                 validator: (value) {
